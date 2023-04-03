@@ -181,6 +181,8 @@ pub struct WsSendData {
     pub delivery_notification: bool,
     /// lifetime for bundle in milliseconds
     pub lifetime: u64,
+    /// expire older bundles than this one with the same destination
+    pub expire_older: bool,
     /// payload data
     #[serde(with = "crate::serde::base64_or_bytes")]
     pub data: Vec<u8>,
