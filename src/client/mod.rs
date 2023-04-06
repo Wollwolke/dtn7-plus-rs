@@ -177,12 +177,10 @@ pub struct WsSendData {
     pub src: String,
     /// destination with a dtn URI scheme, e.g. dtn://node1/sms or ipn://23.42/
     pub dst: String,
-    /// turn on delivery notifications
-    pub delivery_notification: bool,
     /// lifetime for bundle in milliseconds
     pub lifetime: u64,
-    /// remove older bundles than this one with the same source & destination
-    pub remove_older: bool,
+    /// bundle processing control flags, set to 0 if unused
+    pub bundle_flags: u64,
     /// payload data
     #[serde(with = "crate::serde::base64_or_bytes")]
     pub data: Vec<u8>,
